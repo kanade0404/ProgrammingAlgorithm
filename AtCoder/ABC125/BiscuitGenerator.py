@@ -1,2 +1,2 @@
-l = [int(i) for i in input().split()]
-print(l[0])
+a, b, t = map(int, input().split())
+print(b * (t // a))
