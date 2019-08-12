@@ -1,20 +1,21 @@
 import numpy as np
 from scipy.optimize import fsolve
+# test
 
 
-def lagrange(k):
-    x, y, lag = k
-    return -(x ** 2) - (y ** 2) - lag * (x + y - 1)
+def lagrange(X):
+    x, y, L = X
+    return -(x ** 2) - (y ** 2) - L * (x + y - 1)
 
 
-def pertial_derivative(x):
-    d_lambda = np.zeros(len(x))
+def pertial_derivative(X):
+    dLambda = np.zeros(len(X))
     h = 1e-3
-    for i in range(len(x)):
-        dx = np.zeros(len(x))
-        dx[i] = h
-        d_lambda[i] = (lagrange(x + dx) - lagrange(x - dx)) / (2 * h)
-    return d_lambda
+    for i in range(len(X)):
+        dX = np.zeros(len(X))
+        dX[i] = h
+        dLambda[i] = (lagrange(X + dX) - lagrange(X - dX)) / (2 * h)
+    return dLambda
 
 
 max_arg = fsolve(pertial_derivative, [2, 1, 3])
