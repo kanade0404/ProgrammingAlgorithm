@@ -6,8 +6,6 @@ count = 0
 for a in range(A + 1):
     for b in range(B + 1):
         for c in range(C + 1):
-            print('a: {0} b: {1}  c: {2}'.format(a, b, c))
-            print(500 * a + 100 * b + 50 * c)
             if 500 * a + 100 * b + 50 * c == X:
                 count += 1
 print(count)
