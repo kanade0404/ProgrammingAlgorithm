@@ -1,4 +1,4 @@
-from python.HackerRank.compare_the_triplets.main import compareTriplets
+from python.HackerRank.compare_the_triplets import compareTriplets
 
 
 def test_case_1():

@@ -1,4 +1,4 @@
-from python.HackerRank.simple_array_sum.main import simpleArraySum
+from python.HackerRank.simple_array_sum import simpleArraySum
 
 
 def test_case_1():
