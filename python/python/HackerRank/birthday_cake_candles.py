@@ -14,7 +14,8 @@ import sys
 #
 
 def birthdayCakeCandles(candles):
-    pass
+    sorted_candles = sorted(candles, reverse=True)
+    return sorted_candles.count(sorted_candles[0])
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
