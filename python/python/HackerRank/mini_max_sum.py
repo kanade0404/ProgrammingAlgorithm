@@ -13,7 +13,8 @@ import sys
 #
 
 def miniMaxSum(arr):
-    pass
+    sorted_arr = sorted(arr)
+    print("{} {}".format(sum(sorted_arr[:-1]), sum(sorted_arr[1:])))
 
 if __name__ == '__main__':
 
