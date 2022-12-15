@@ -3,8 +3,8 @@ name: Python package
 on:
   push:
     branches: [master]
-  pull_request:
-    branches: [master]
+    paths:
+      - python/**
 
 defaults:
   run:
@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ['3.8', '3.9']
+        python-version: ['3.8']
 
     steps:
       - uses: actions/checkout@v3
