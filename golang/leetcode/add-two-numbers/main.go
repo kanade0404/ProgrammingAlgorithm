@@ -25,7 +25,6 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 		if i >= l1Len && i >= l2Len {
 			if isCarry {
 				result = append([]byte{1}, result...)
-				i++
 			}
 			break
 		}
@@ -50,7 +49,7 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 		acc2 = 0
 		i++
 	}
-	return createNode(result, i, i, nil)
+	return createNode(result, len(result), nil)
 }
 func add(acc []byte, l *ListNode, count int) ([]byte, int) {
 	if l.Next == nil {
@@ -59,19 +58,20 @@ func add(acc []byte, l *ListNode, count int) ([]byte, int) {
 		return add(append(acc, byte(l.Val)), l.Next, count+1)
 	}
 }
-func createNode(num []byte, curNumLen, numLen int, l *ListNode) *ListNode {
-	if curNumLen-1 == 0 {
+func createNode(num []byte, numLen int, l *ListNode) *ListNode {
+	nLen := len(num)
+	if nLen-1 == 0 {
 		return &ListNode{
 			Val:  int(num[0]),
 			Next: l,
 		}
 	} else {
-		if curNumLen == numLen {
-			return createNode(num[1:], curNumLen-1, numLen, &ListNode{
+		if nLen == numLen {
+			return createNode(num[1:], numLen, &ListNode{
 				Val: int(num[0]),
 			})
 		} else {
-			return createNode(num[1:], curNumLen-1, numLen, &ListNode{
+			return createNode(num[1:], numLen, &ListNode{
 				Val:  int(num[0]),
 				Next: l,
 			})
