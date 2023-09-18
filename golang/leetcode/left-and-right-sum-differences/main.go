@@ -7,6 +7,7 @@ import (
 func leftRightDifference(nums []int) []int {
 	var leftSum, rightSum, result []int
 	for i := 0; i < len(nums); i++ {
+		
 		var left, right int
 		if i == 0 {
 			leftSum = append(leftSum, 0)

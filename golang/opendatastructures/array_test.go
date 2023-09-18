@@ -1,4 +1,4 @@
-package array_stack
+package opendatastructures
 
 import (
 	"reflect"
@@ -17,7 +17,10 @@ func TestArrayStack_Get(t *testing.T) {
 	}{
 		{
 			name: "index0=a",
-			a:    ArrayStack[string]{"a", "b", "c"},
+			a: ArrayStack[string]{
+				arr: []string{"a", "b", "c"},
+				n:   3,
+			},
 			args: args{
 				index: 0,
 			},
@@ -25,7 +28,10 @@ func TestArrayStack_Get(t *testing.T) {
 		},
 		{
 			name: "index1=b",
-			a:    ArrayStack[string]{"a", "b", "c"},
+			a: ArrayStack[string]{
+				arr: []string{"a", "b", "c"},
+				n:   3,
+			},
 			args: args{
 				index: 1,
 			},
@@ -56,7 +62,7 @@ func TestArrayStack_Pop(t *testing.T) {
 		want string
 	}{
 		{
-			name: "",
+			name: "test",
 			a:    ArrayStack[string]{"a", "b", "c"},
 			want: "c",
 		},
@@ -87,20 +93,6 @@ func TestArrayStack_Push(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			tt.a.Push(tt.args.value)
-		})
-	}
-}
-
-func TestArrayStack_resize(t *testing.T) {
-	tests := []struct {
-		name string
-		a    ArrayStack[string]
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			tt.a.resize()
 		})
 	}
 }

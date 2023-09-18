@@ -1,4 +1,4 @@
-package insert_sort
+package opendatastructures
 
 import "fmt"
 

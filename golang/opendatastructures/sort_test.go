@@ -1,4 +1,4 @@
-package insert_sort
+package opendatastructures
 
 import (
 	"github.com/google/go-cmp/cmp"
